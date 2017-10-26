@@ -13,6 +13,7 @@ import pl.destino.recipes.domain.UnitOfMeasure;
 import pl.destino.recipes.repositories.CategoryRepository;
 import pl.destino.recipes.repositories.RecipeRepository;
 import pl.destino.recipes.repositories.UnitOfMeasureRepository;
+import pl.destino.recipes.services.RecipeService;
 
 /**
  *
@@ -20,22 +21,17 @@ import pl.destino.recipes.repositories.UnitOfMeasureRepository;
  */
 @Controller
 public class IndexController {
+   
+    private final RecipeService  recipeService;
 
-    private final RecipeRepository recipeRepository;
-
-    public IndexController(RecipeRepository recipeRepository) {
-        this.recipeRepository = recipeRepository;
+    public IndexController(RecipeService recipeService) {
+        this.recipeService = recipeService;
     }
-    
-    
     
     @RequestMapping({"","/","index"})
     public String getIndex(Model model) {
-        
-        Iterable<Recipe> recipes = recipeRepository.findAll();
-        ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
-        recipes.iterator().forEachRemaining(recipeList::add);
-        model.addAttribute("recipes", recipeList);
+
+        model.addAttribute("recipes", recipeService.getRecipes());
 
         return "index";
     }
