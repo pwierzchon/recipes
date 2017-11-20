@@ -6,11 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
+import lombok.Data;
 
 /**
  *
  * @author Destino
  */
+@Data
 @Entity
 public class Notes {
 

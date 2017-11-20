@@ -14,6 +14,7 @@ import pl.destino.recipes.repositories.CategoryRepository;
 import pl.destino.recipes.repositories.RecipeRepository;
 import pl.destino.recipes.repositories.UnitOfMeasureRepository;
 import pl.destino.recipes.services.RecipeService;
+import pl.destino.recipes.services.RecipeServiceImpl;
 
 /**
  *
@@ -24,7 +25,7 @@ public class IndexController {
    
     private final RecipeService  recipeService;
 
-    public IndexController(RecipeService recipeService) {
+    public IndexController(RecipeServiceImpl recipeService) {
         this.recipeService = recipeService;
     }
     
