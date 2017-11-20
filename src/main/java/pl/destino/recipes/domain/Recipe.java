@@ -16,6 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import pl.destino.recipes.enums.Difficulty;
 
 /**
@@ -23,6 +24,7 @@ import pl.destino.recipes.enums.Difficulty;
  * @author Destino
  */
 @Data
+@EqualsAndHashCode(exclude = {"ingredients","notes","categories"})
 @Entity
 public class Recipe {
 
