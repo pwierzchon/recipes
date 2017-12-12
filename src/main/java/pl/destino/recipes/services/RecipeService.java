@@ -2,7 +2,7 @@
  */
 package pl.destino.recipes.services;
 
-import java.util.List;
+import java.util.Set;
 import pl.destino.recipes.domain.Recipe;
 
 /**
@@ -11,5 +11,5 @@ import pl.destino.recipes.domain.Recipe;
  */
 public interface RecipeService {
 
-    List<Recipe> getRecipes();
+    Set<Recipe> getRecipes();
 }

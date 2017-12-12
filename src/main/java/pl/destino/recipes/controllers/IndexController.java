@@ -25,7 +25,7 @@ public class IndexController {
    
     private final RecipeService  recipeService;
 
-    public IndexController(RecipeServiceImpl recipeService) {
+    public IndexController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
     
